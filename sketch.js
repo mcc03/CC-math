@@ -1,21 +1,23 @@
 let arrow = []
 
+
 function setup(){
     createCanvas(500, 500);
     angleMode(DEGREES);
-    arrow.push(new Arrow(250, 250, 0));
-    arrow.push(new Arrow(100, 100, 0));
-    arrow.push(new Arrow(100, 200, 0));
-    arrow.push(new Arrow(100, 300, 0));
-    arrow.push(new Arrow(100, 400, 0));
+ 
+    for(let x = 0; x < 10; x++){
+        let randNum1 =  Math.floor(Math.random() * 500) + 1;
+        let randNum2 =  Math.floor(Math.random() * 500) + 1;
+        arrow.push(new Arrow(randNum1, randNum2, 0, color(255, 0, 0)));
+        //console.log(randNum);
+    }
     
 }
 
 function draw(){
     background(200);
-    arrow[0].render();
-    arrow[1].render();
-    arrow[2].render();
-    arrow[3].render();
-    arrow[4].render();
+    for(let x = 0; x <10; x++){
+        arrow[x].render()
+    }
+
 }
