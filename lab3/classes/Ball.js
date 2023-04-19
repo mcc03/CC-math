@@ -9,7 +9,7 @@ class Ball {
 
 		this.color = color;
 	}
-	//draw the ball
+
 	drawBall() {
         ellipse(this.x,this.y, 20)
 	}
@@ -22,5 +22,14 @@ class Ball {
     render(){
         this.drawBall();
         this.moveBall();
+        this.reset();
+    }
+
+    // resets position of ball
+    reset(){
+        if(this.x > 500 || this.y > 500){
+            this.x += this.x*-1
+            this.y += this.y*-1
+        }
     }
 }
