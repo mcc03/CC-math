@@ -46,7 +46,9 @@ function draw() {
 				if (x !== i && balls[i] instanceof BallWithVelocity) {
 					// calls the intersect  if balls are intersecting function and prints "collision"
 					if (balls[x].intersect(balls[i])) {
-						console.log("collision!");
+						textStyle(BOLD)
+						textSize(24)
+						text("collision!", balls[x].x, balls[i].y);
 					}
 				}
 			}
